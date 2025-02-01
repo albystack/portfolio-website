@@ -22,12 +22,12 @@ export default function ProjectView() {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const response = await fetch(`https://raw.githubusercontent.com/albystack/albystack.github.io/main/content/projects/${id}.md`);
+        const response = await fetch(`/content/projects/${id}.md`);
         if (!response.ok) throw new Error('Project not found');
         const content = await response.text();
         
         // Fetch project metadata
-        const metaResponse = await fetch('https://raw.githubusercontent.com/albystack/albystack.github.io/main/content/projects.json');
+        const metaResponse = await fetch(`/content/projects.json`);
         if (!metaResponse.ok) throw new Error('Failed to fetch project metadata');
         const projects = await metaResponse.json();
         const projectMeta = projects.find((p: Project) => p.id === id);

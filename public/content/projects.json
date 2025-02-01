@@ -1,0 +1,90 @@
+[
+  {
+    "id": "hft-execution",
+    "title": "Optimal Execution & Market Making Simulator",
+    "description": "Developed a high-frequency trading (HFT) market making simulator using reinforcement learning (RL) to optimize limit order placement, minimizing adverse selection and maximizing inventory control.",
+    "tags": ["C++", "Python", "Reinforcement Learning", "Market Microstructure"],
+    "demoLink": "https://hft-execution.com",
+    "githubLink": "https://github.com/albystack/hft-execution"
+  },
+  {
+    "id": "statistical-arbitrage",
+    "title": "Statistical Arbitrage & Bayesian Alpha Models",
+    "description": "Built statistical arbitrage strategies using Bayesian inference and hidden Markov models, identifying mean-reverting asset pairs and backtesting on equities, futures, and crypto data.",
+    "tags": ["Python", "Bayesian Statistics", "Quantitative Finance", "Backtesting"],
+    "demoLink": "https://statistical-arbitrage.com",
+    "githubLink": "https://github.com/albystack/statistical-arbitrage"
+  },
+  {
+    "id": "ml-alpha-research",
+    "title": "Machine Learning for Alpha Generation",
+    "description": "Designed and trained ML models to detect non-linear patterns in market data, combining NLP for sentiment analysis and feature engineering using market microstructure signals.",
+    "tags": ["Python", "TensorFlow", "Alpha Research", "Natural Language Processing"],
+    "demoLink": "https://ml-alpha-research.com",
+    "githubLink": "https://github.com/albystack/ml-alpha-research"
+  },
+  {
+    "id": "derivatives-pricing",
+    "title": "Stochastic Volatility & Option Pricing Models",
+    "description": "Implemented option pricing models (Heston, SABR) and volatility surface calibration using stochastic differential equations, integrating Monte Carlo methods for risk-neutral pricing.",
+    "tags": ["C++", "Python", "Stochastic Calculus", "Derivatives Pricing"],
+    "demoLink": "https://derivatives-pricing.com",
+    "githubLink": "https://github.com/albystack/derivatives-pricing"
+  },
+  {
+    "id": "carbon-tracker",
+    "title": "EPQ Carbon Footprint Tracker",
+    "description": "Built a React Native app for tracking personal carbon emissions as part of my A-Level EPQ. Users can log their daily activities, get carbon footprint estimates, and receive reduction suggestions.",
+    "tags": ["React Native", "Sustainability", "Mobile App"],
+    "demoLink": "https://carbon-tracker.com",
+    "githubLink": "https://github.com/albystack/carbon-tracker"
+  },
+  {
+    "id": "pathfinding-maze",
+    "title": "Pathfinding & Maze Generation (A-Level NEA)",
+    "description": "Developed a pathfinding algorithm and maze generation tool using Tkinter for my A-Level Computer Science NEA. Implemented A*, DFS, BFS, Greedy BFS, Kruskal’s, Dijkstra’s, Binary Tree, and Recursive Division algorithms.",
+    "tags": ["Python", "Algorithms", "Graph Theory"],
+    "demoLink": "https://pathfinding-maze.com",
+    "githubLink": "https://github.com/albystack/pathfinding-maze"
+  },
+  {
+    "id": "stock-analysis",
+    "title": "Stock Market Analysis & Sentiment Tracker",
+    "description": "Created a Python tool that scrapes financial news, analyzes sentiment using NLP, and correlates it with stock price movements to identify potential trading signals.",
+    "tags": ["Python", "NLP", "Finance"],
+    "demoLink": "https://stock-analysis.com",
+    "githubLink": "https://github.com/albystack/stock-analysis"
+  },
+  {
+    "id": "crypto-tracker",
+    "title": "Crypto Price Tracker & Portfolio Management",
+    "description": "Built a Python Flask web app that tracks real-time cryptocurrency prices, calculates portfolio returns, and alerts users about significant price movements.",
+    "tags": ["Python", "Flask", "Web Scraping"],
+    "demoLink": "https://crypto-tracker.com",
+    "githubLink": "https://github.com/albystack/crypto-tracker"
+  },
+  {
+    "id": "sudoku-solver",
+    "title": "AI-Powered Sudoku Solver",
+    "description": "Developed a backtracking-based Sudoku solver in Python, with a GUI built using Tkinter. Extended it with an AI approach using constraint satisfaction algorithms.",
+    "tags": ["Python", "Algorithms", "AI"],
+    "demoLink": "https://sudoku-solver.com",
+    "githubLink": "https://github.com/albystack/sudoku-solver"
+  },
+  {
+    "id": "algo-trader",
+    "title": "Simple Algorithmic Trading Bot",
+    "description": "Implemented a basic algorithmic trading bot that executes trades based on moving average crossovers and RSI signals, backtested on historical market data.",
+    "tags": ["Python", "Finance", "Trading Algorithms"],
+    "demoLink": "https://algo-trader.com",
+    "githubLink": "https://github.com/albystack/algo-trader"
+  },
+  {
+    "id": "portfolio",
+    "title": "Personal Portfolio Website",
+    "description": "Designed and developed this website using React and TypeScript, showcasing my projects, skills, and experience in software development and quantitative finance.",
+    "tags": ["React", "TypeScript", "Web Development"],
+    "demoLink": "https://albertorescigno.me",
+    "githubLink": "https://github.com/albystack/website"
+  }
+]
