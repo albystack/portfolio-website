@@ -22,13 +22,13 @@ export default function ProjectView() {
   useEffect(() => {
     const fetchProject = async () => {
   try {
-    // Fetch markdown file
-    const response = await fetch(`/content/projects/${id}.md`);
+    // Fetch markdown file from Vercel
+    const response = await fetch(`https://www.albertorescigno.me/content/projects/${id}.md`, { mode: 'cors' });
     if (!response.ok) throw new Error('Project markdown not found');
     const content = await response.text();
 
     // Fetch metadata
-    const metaResponse = await fetch('/content/projects.json');
+    const metaResponse = await fetch('https://www.albertorescigno.me/content/projects.json', { mode: 'cors' });
     if (!metaResponse.ok) throw new Error('Failed to fetch project metadata');
     const projects = await metaResponse.json();
     const projectMeta = projects.find((p: Project) => p.id === id);
@@ -42,7 +42,8 @@ export default function ProjectView() {
     setError(error instanceof Error ? error.message : 'Failed to fetch project');
     setLoading(false);
   }
-};
+  };
+
 
 
     if (id) fetchProject();
