@@ -38,7 +38,7 @@ const AboutSection = () => (
   <section className="space-y-4">
     <h1 className="text-4xl font-bold">About Me</h1>
     <p className="text-lg leading-relaxed">
-      As a 17-year-old Year 13 student and aspiring quantitative developer, I am deeply passionate about leveraging mathematics, technology, and finance to develop innovative solutions to complex problems. My academic pursuits and personal projects enable me to apply my skills in real-world scenarios. I dedicate my time to learning, researching, optimizing trading strategies, playing chess, swimming competitively, and building cutting-edge projects.
+      As a Year 13 student and aspiring quantitative developer, I am deeply passionate about leveraging mathematics, technology, and finance to develop innovative solutions to complex problems. My academic pursuits and personal projects enable me to apply my skills in real-world scenarios. I dedicate my time to learning, researching, optimizing trading strategies, playing chess, swimming competitively, and building cutting-edge projects.
     </p>
   </section>
 );
