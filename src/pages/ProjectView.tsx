@@ -21,27 +21,29 @@ export default function ProjectView() {
 
   useEffect(() => {
     const fetchProject = async () => {
-      try {
-        const response = await fetch(`/content/projects/${id}.md`);
-        if (!response.ok) throw new Error('Project not found');
-        const content = await response.text();
-        
-        // Fetch project metadata
-        const metaResponse = await fetch(`/content/projects.json`);
-        if (!metaResponse.ok) throw new Error('Failed to fetch project metadata');
-        const projects = await metaResponse.json();
-        const projectMeta = projects.find((p: Project) => p.id === id);
-        
-        if (!projectMeta) throw new Error('Project metadata not found');
-        
-        setProject({ ...projectMeta, content });
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching project:', error);
-        setError(error instanceof Error ? error.message : 'Failed to fetch project');
-        setLoading(false);
-      }
-    };
+  try {
+    // Fetch markdown file
+    const response = await fetch(`/content/projects/${id}.md`);
+    if (!response.ok) throw new Error('Project markdown not found');
+    const content = await response.text();
+
+    // Fetch metadata
+    const metaResponse = await fetch('/content/projects.json');
+    if (!metaResponse.ok) throw new Error('Failed to fetch project metadata');
+    const projects = await metaResponse.json();
+    const projectMeta = projects.find((p: Project) => p.id === id);
+
+    if (!projectMeta) throw new Error('Project metadata not found');
+
+    setProject({ ...projectMeta, content });
+    setLoading(false);
+  } catch (error) {
+    console.error('Error fetching project:', error);
+    setError(error instanceof Error ? error.message : 'Failed to fetch project');
+    setLoading(false);
+  }
+};
+
 
     if (id) fetchProject();
   }, [id]);
