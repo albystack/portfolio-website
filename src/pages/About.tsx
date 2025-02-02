@@ -234,7 +234,7 @@ export default function About() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/albystack/albystack.github.io/main/content/projects.json');
+        const response = await fetch(`/content/projects.json`);
         if (!response.ok) throw new Error('Failed to fetch projects');
         const allProjects = await response.json();
         const filteredProjects = allProjects.filter((project: Project) => 
