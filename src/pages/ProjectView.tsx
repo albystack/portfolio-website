@@ -22,20 +22,18 @@ export default function ProjectView() {
   useEffect(() => {
   const fetchProject = async () => {
     try {
-      const projectUrl = `https://www.albertorescigno.me/content/projects/${id}.md`;
-      const metaUrl = `https://www.albertorescigno.me/content/projects.json`;
+      const projectUrl = `/content/projects/${id}.md`;
+      const metaUrl = `/content/projects.json`;
 
       console.log("Fetching:", projectUrl);
       console.log("Fetching metadata:", metaUrl);
 
-      // Fetch markdown file from Vercel
-      const response = await fetch(projectUrl, { mode: 'cors' });
+      const response = await fetch(projectUrl);
       if (!response.ok) throw new Error(`Project markdown not found: ${response.status}`);
 
       const content = await response.text();
 
-      // Fetch metadata
-      const metaResponse = await fetch(metaUrl, { mode: 'cors' });
+      const metaResponse = await fetch(metaUrl);
       if (!metaResponse.ok) throw new Error(`Failed to fetch project metadata: ${metaResponse.status}`);
 
       const projects = await metaResponse.json();
@@ -54,6 +52,7 @@ export default function ProjectView() {
 
   if (id) fetchProject();
 }, [id]);
+
 
 
   if (loading) {
