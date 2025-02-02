@@ -233,7 +233,6 @@ const SkillsSection = () => {
   const skills = [
     { name: 'Python', icon: 'logos:python' },
     { name: 'C++', icon: 'logos:c-plusplus' },
-    { name: 'React', icon: 'logos:react' },
     { name: 'HTML', icon: 'logos:html-5' },
     { name: 'CSS', icon: 'logos:css-3' },
     { name: 'JavaScript', icon: 'logos:javascript' },
@@ -263,8 +262,6 @@ const SkillsSection = () => {
     </section>
   );
 };
-
-
 
 export default function About() {
   const [currentProjects, setCurrentProjects] = useState<Project[]>([]);
