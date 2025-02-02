@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Icon } from '@iconify/react';
+
 
 interface PdfFile {
   name: string;
@@ -226,6 +228,44 @@ const EducationSection = () => (
   </section>
 );
 
+
+const SkillsSection = () => {
+  const skills = [
+    { name: 'Python', icon: 'logos:python' },
+    { name: 'C++', icon: 'logos:c-plusplus' },
+    { name: 'React', icon: 'logos:react' },
+    { name: 'HTML', icon: 'logos:html-5' },
+    { name: 'CSS', icon: 'logos:css-3' },
+    { name: 'JavaScript', icon: 'logos:javascript' },
+    { name: 'TypeScript', icon: 'logos:typescript-icon' },
+    { name: 'React', icon: 'logos:react' },
+    { name: 'Firebase', icon: 'logos:firebase' },
+    { name: 'Git', icon: 'logos:git-icon' },
+    { name: 'Node.js', icon: 'logos:nodejs-icon' },
+    { name: 'Docker', icon: 'logos:docker-icon' },
+    { name: '', icon: 'logos:pandas' },
+    { name: 'NumPy', icon: 'logos:numpy' },
+    { name: 'TensorFlow', icon: 'logos:tensorflow' },
+    { name: 'SQL', icon: 'logos:postgresql' },
+  ];
+
+  return (
+    <section className="space-y-4">
+      <h2 className="text-2xl font-bold">Skills</h2>
+      <div className="flex flex-wrap gap-4">
+        {skills.map(skill => (
+          <div key={skill.name} className="flex items-center space-x-2">
+            <Icon icon={skill.icon} className="text-2xl" />
+            <span className="text-lg font-medium">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+
+
 export default function About() {
   const [currentProjects, setCurrentProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
@@ -264,6 +304,7 @@ export default function About() {
       <EducationSection />
       <WorkExperienceSection />
       <ProjectsSection projects={currentProjects} loading={loading} error={error} />
+      <SkillsSection />
     </motion.div>
   );
 } 
