@@ -127,7 +127,7 @@ const DocumentsSection = () => {
       {pdfFiles
         .filter(pdf => pdf.group === group)
         .map(pdf => {
-        const staticUrl = `/public/assets/PDF/${pdf.name}.pdf`;
+        const staticUrl = `assets/PDF/${pdf.name}.pdf`;
           return (
             <div key={pdf.name} className="mb-2">
               <a
