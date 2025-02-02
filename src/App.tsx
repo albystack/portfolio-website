@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react-router-dom';
+import { Routes, Route, Navigate, NavLink } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 // Lazy load pages for better performance
@@ -9,7 +9,6 @@ const ProjectView = lazy(() => import('./pages/ProjectView'));
 
 export default function App() {
   return (
-    <Router>
       <div className="min-h-screen bg-background text-foreground font-sans">
         {/* Header */}
         <header className="bg-background">
@@ -101,6 +100,5 @@ export default function App() {
           </Suspense>
         </main>
       </div>
-    </Router>
   );
 }
