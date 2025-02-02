@@ -20,34 +20,41 @@ export default function ProjectView() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProject = async () => {
-  try {
-    // Fetch markdown file from Vercel
-    const response = await fetch(`https://www.albertorescigno.me/content/projects/${id}.md`, { mode: 'cors' });
-    if (!response.ok) throw new Error('Project markdown not found');
-    const content = await response.text();
+  const fetchProject = async () => {
+    try {
+      const projectUrl = `https://www.albertorescigno.me/content/projects/${id}.md`;
+      const metaUrl = `https://www.albertorescigno.me/content/projects.json`;
 
-    // Fetch metadata
-    const metaResponse = await fetch('https://www.albertorescigno.me/content/projects.json', { mode: 'cors' });
-    if (!metaResponse.ok) throw new Error('Failed to fetch project metadata');
-    const projects = await metaResponse.json();
-    const projectMeta = projects.find((p: Project) => p.id === id);
+      console.log("Fetching:", projectUrl);
+      console.log("Fetching metadata:", metaUrl);
 
-    if (!projectMeta) throw new Error('Project metadata not found');
+      // Fetch markdown file from Vercel
+      const response = await fetch(projectUrl, { mode: 'cors' });
+      if (!response.ok) throw new Error(`Project markdown not found: ${response.status}`);
 
-    setProject({ ...projectMeta, content });
-    setLoading(false);
-  } catch (error) {
-    console.error('Error fetching project:', error);
-    setError(error instanceof Error ? error.message : 'Failed to fetch project');
-    setLoading(false);
-  }
+      const content = await response.text();
+
+      // Fetch metadata
+      const metaResponse = await fetch(metaUrl, { mode: 'cors' });
+      if (!metaResponse.ok) throw new Error(`Failed to fetch project metadata: ${metaResponse.status}`);
+
+      const projects = await metaResponse.json();
+      const projectMeta = projects.find((p: Project) => p.id.toLowerCase() === id?.toLowerCase());
+
+      if (!projectMeta) throw new Error('Project metadata not found');
+
+      setProject({ ...projectMeta, content });
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching project:', error);
+      setError(error instanceof Error ? error.message : 'Failed to fetch project');
+      setLoading(false);
+    }
   };
 
+  if (id) fetchProject();
+}, [id]);
 
-
-    if (id) fetchProject();
-  }, [id]);
 
   if (loading) {
     return (
