@@ -22,7 +22,7 @@ interface Project {
 
 
 const pdfFiles: PdfFile[] = [
-    { name: '', label: 'Year 13 Mocks', lastUpdated: '03/02/2025', group: 'transcript' },
+    { name: 'year13-mocks', label: 'Year 13 Mocks', lastUpdated: '03/02/2025', group: 'transcript' },
     { name: '', label: 'Year 12 Mocks', lastUpdated: '20/06/2024', group: 'transcript' },
     { name: 'personal-statement', label: 'Personal Statement', lastUpdated: '9/9/2024', group: 'other' },
     { name: '', label: 'Resume', lastUpdated: '08/10/2024', group: 'other' }
